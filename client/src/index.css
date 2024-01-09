@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pokemon_container {
+	width: 100%;
+	padding: 0px 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+}
+
+.pokemon_card_container {
+	background-color: red;
+	height: 200px;
+}

@@ -1,11 +1,16 @@
+import PokemonProvider from "../src/context/PokemonsAppProvider";
+import DisplayPokemons from "../src/components/DisplayPokemons";
+import MenuOptions from "./components/MenuOptions";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <h1>hola mundo</h1>
-    </>
-  )
+    <div style={{ display: 'flex' }} >
+      <PokemonProvider >
+        <MenuOptions />
+        <DisplayPokemons />
+      </PokemonProvider>
+    </div >
+  );
 }
 
-export default App
+export default App;

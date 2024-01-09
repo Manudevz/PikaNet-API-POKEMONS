@@ -1,30 +1,19 @@
-import { useState } from "react"
-import axios from 'axios'
+// DisplayPokemons.tsx
+import { usePokemonContext } from "../context/PokemonsAppContext";
+import { PokemonCard } from './PokemonCard';
 
-
-
-export const DisplayPokemons = () => {
-  const [pokemons, setpokemons] = useState([])
-
-  useEffect(() => {
-    const getPokemons = async () => {
-      const pokemonsFromServer = await axios.get('http://localhost:3000')
-      setpokemons(pokemonsFromServer)
-    }
-    getPokemons()
-    return () => {
-      second
-    }
-  }, [third])
-    (() => {
-      first
-
-      return () => {
-        second
-      }
-    }, [third])
+const DisplayPokemons = () => {
+  const { pokemons } = usePokemonContext();
 
   return (
-    <div>DisplayPokemons</div>
-  )
+    <div className="pokemon_container">
+      {
+        pokemons.map((pokemon) => (
+          <PokemonCard key={pokemon.name} pokemon={pokemon} />
+        ))
+      }
+    </div>
+  );
 }
+
+export default DisplayPokemons;
