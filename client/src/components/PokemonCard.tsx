@@ -30,7 +30,7 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
     <div className="pokemon_card_container" >
       <div className="content_card">
         <div className="top_section"   >
-          <img className="imgPokemon" style={{ height: '96px', width: '96px', marginTop: '-50px' }} src={pokemon.sprites.front_default || '../../public/pokemon_not_imgEncountered.png'} alt={pokemon.name} />
+          <img className="imgPokemon" style={{ height: '96px', width: '96px', marginTop: '-50px' }} src={pokemon.sprites.front_default || '../assets/images/pokemon_not_imgEncountered.png'} alt={pokemon.name} />
         </div>
         <p>N° {pokemon.id}</p>
         <h3>{pokemon.name}</h3>

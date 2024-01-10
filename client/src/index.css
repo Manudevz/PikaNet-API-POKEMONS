@@ -14,7 +14,7 @@ body {
 	background: #f6f8fc;
 	font-family: "Outfit", sans-serif;
 	justify-content: center;
-	background-image: url("../public/pokeball-body.png");
+	background-image: url("../src/assets/images/pokeball-body.png");
 	background-repeat: no-repeat;
 	background-position-x: -180px;
 	background-position-y: -80px;
@@ -44,10 +44,9 @@ body {
 	justify-content: space-between;
 	border: 0.2rem solid transparent;
 	transition: border 0.3s ease;
-
-	&:hover {
-		border-color: #e0e0e0;
-	}
+}
+.pokemon_card_container:hover {
+	border-color: #e0e0e0;
 }
 
 .imgPokemon {
@@ -104,9 +103,9 @@ body {
 	padding: 0.8rem 1rem;
 	background-color: #37373b;
 	color: #fff;
-	& button:hover {
-		color: red;
-	}
+}
+.pagination_container-buttons button:hover {
+	color: red;
 }
 
 @media screen and (min-width: 768px) {
