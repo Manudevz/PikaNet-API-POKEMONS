@@ -2,15 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Outfit", sans-serif;
+	font-size: 16px;
+}
+
+body {
+	background: #f6f8fc;
+	font-family: "Outfit", sans-serif;
+	justify-content: center;
+	background-image: url("../public/pokeball-body.png");
+	background-repeat: no-repeat;
+	background-position-x: -180px;
+	background-position-y: -80px;
+	width: 100%;
+}
+
 .pokemon_container {
 	width: 100%;
-	padding: 0px 20px;
+	padding: 140px 20px 16px 60px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 10px;
+	row-gap: 50px;
+	column-gap: 30px;
 }
 
 .pokemon_card_container {
-	background-color: red;
-	height: 200px;
+	background-color: #fff;
+	height: 11rem;
+	border-radius: 10px;
+	box-sizing: border-box;
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	border-radius: 2.2rem;
+	font-size: 1rem;
+	cursor: grab;
+	justify-content: space-between;
+	border: 0.2rem solid transparent;
+	transition: border 0.3s ease;
+
+	&:hover {
+		border-color: #e0e0e0;
+	}
+}
+
+.imgPokemon {
+	transition: transform 0.3s ease;
+}
+
+.pokemon_card_container:hover .imgPokemon {
+	transform: scale(1.2);
+}
+
+.content_card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	height: 100%;
+}
+
+.top_section {
+	display: flex;
+	justify-content: center;
+	border-top-right-radius: 2rem;
+	border-top-left-radius: 2rem;
+	font-size: 1.6rem;
+	width: 100%;
+	background-color: #f2f2f2;
+}
+
+.pokemon_types {
+	padding: 0.4rem;
+	margin: 0.2rem;
+	border-radius: 0.4rem;
+	color: #111112;
+	font-weight: 400;
+}
+
+.bottom_section {
+	height: 30px; /* Adjust as needed */
+	width: 100%;
+	background-color: #ffffff; /* White color */
+}
+
+/* pagination */
+
+.pagination_container {
+	display: flex;
+	justify-content: center;
+}
+
+.pagination_container-buttons {
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+	padding: 0.8rem 1rem;
+	background-color: #37373b;
+	color: #fff;
+	& button:hover {
+		color: red;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.pokemon_container {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+
+	.pagination_container-buttons {
+		padding: 0.4rem 3rem;
+	}
 }

@@ -1,7 +1,8 @@
 const axios = require("axios");
-const urlPath = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20";
 
-const getPokemonsFromApi = async () => {
+const getPokemonsFromApi = async (offSet) => {
+	const urlPath = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=21`;
+	console.log("🚀 ~ getPokemonsFromApi ~ offSet:", offSet);
 	try {
 		const pokemonsPromises = await axios.get(urlPath);
 		if (pokemonsPromises.status === 200) {
@@ -33,7 +34,8 @@ const getPokemonsFromApi = async () => {
 			const enhancedPokemonDetails = successfulPokemonDetails.map((pokemon) => {
 				const imageUrl =
 					pokemon.sprites?.other?.showdown?.front_default || null;
-				return { ...pokemon, imagePokemon: imageUrl };
+				const types = pokemon.types.map((object) => object.type.name);
+				return { ...pokemon, imagePokemon: imageUrl, typesPokemon: types };
 			});
 
 			return enhancedPokemonDetails;

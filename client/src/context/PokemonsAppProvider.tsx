@@ -5,15 +5,19 @@ import { PokemonProviderProps, Pokemons } from '../types/index';
 
 const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [pokemons, setPokemons] = useState<Pokemons[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     const source: CancelTokenSource = axios.CancelToken.source();
 
-    const getPokemons = async () => {
+    const getPokemons = async (offset: number) => {
       try {
-        const response = await axios.get<Pokemons[]>('http://localhost:3000', {
-          cancelToken: source.token
-        });
+        const response = await axios.get<Pokemons[]>(
+          `http://localhost:3000?offset=${offset}&limit=20`,
+          {
+            cancelToken: source.token
+          }
+        );
         const pokemonsFromServer: Pokemons[] = response.data;
         setPokemons(pokemonsFromServer);
       } catch (error) {
@@ -26,19 +30,19 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
       }
     };
 
-    getPokemons();
+    getPokemons((currentPage - 1) * 21);
 
     // Cleanup function
     return () => {
       source.cancel('closed by the user.');
     };
-  }, []);
+  }, [currentPage]);
 
 
   console.log("🚀 ~ file: PokemonsAppProvider.tsx:17 ~ pokemons:", pokemons);
 
   return (
-    <PokemonContext.Provider value={{ pokemons, setPokemons }}>
+    <PokemonContext.Provider value={{ pokemons, setPokemons, currentPage, setCurrentPage }}>
       {children}
     </PokemonContext.Provider>
   );

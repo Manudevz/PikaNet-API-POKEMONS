@@ -4,12 +4,12 @@ import MenuOptions from "./components/MenuOptions";
 
 const App = () => {
   return (
-    <div style={{ display: 'flex' }} >
-      <PokemonProvider >
-        <MenuOptions />
+    <PokemonProvider >
+      <div className="flex relative">
         <DisplayPokemons />
-      </PokemonProvider>
-    </div >
+        <MenuOptions />
+      </div >
+    </PokemonProvider>
   );
 }
 

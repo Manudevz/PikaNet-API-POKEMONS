@@ -4,6 +4,11 @@
 import { createContext, useContext } from "react";
 
 type Pokemons = {
+  sprites: {
+    front_default: string;
+  };
+  typesPokemon?: string[];
+  id?: number | string;
   name: string;
   imagePokemon: string;
 };
@@ -11,6 +16,8 @@ type Pokemons = {
 interface PokemonContextProps {
   pokemons: Pokemons[];
   setPokemons: React.Dispatch<React.SetStateAction<Pokemons[]>>;
+  currentPage: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const PokemonContext = createContext<PokemonContextProps | undefined>(undefined);

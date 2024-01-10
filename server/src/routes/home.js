@@ -2,8 +2,10 @@ const { Router } = require("express");
 const getPokemonsFromApi = require("../controllers/homeControllers");
 
 const routes = Router();
+
 routes.get("/", async (req, res) => {
-	const pokemons = await getPokemonsFromApi();
+	const offset = req.query.offset;
+	const pokemons = await getPokemonsFromApi(offset);
 	res.json(pokemons);
 });
 
