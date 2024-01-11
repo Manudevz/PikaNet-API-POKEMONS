@@ -4,7 +4,11 @@
 import { createContext, useContext } from "react";
 
 type Pokemons = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  types: any;
   sprites: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    other: any;
     front_default: string;
   };
   typesPokemon?: string[];
@@ -15,6 +19,7 @@ type Pokemons = {
 
 interface PokemonContextProps {
   pokemons: Pokemons[];
+  allPokemons: Pokemons[]
   setPokemons: React.Dispatch<React.SetStateAction<Pokemons[]>>;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;

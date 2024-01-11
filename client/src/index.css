@@ -14,16 +14,38 @@ body {
 	background: #f6f8fc;
 	font-family: "Outfit", sans-serif;
 	justify-content: center;
-	background-image: url("../src/assets/images/pokeball-body.png");
+	background-image: url("../public//images/pokeball-body.png");
 	background-repeat: no-repeat;
 	background-position-x: -180px;
 	background-position-y: -80px;
 	width: 100%;
 }
+.searcher_container {
+	display: flex;
+	justify-content: center;
+}
+.searcher {
+	position: relative;
+	left: 2rem;
+	width: 72%;
+	height: 3rem;
+	margin: 2.1rem 0;
+	padding: 0 0 0 1.4rem;
+	border-radius: 1rem;
+}
+
+.search-icon {
+	right: 0.6rem;
+	position: relative;
+	object-fit: cover;
+	height: 34px;
+	width: 34px;
+	top: 2.5rem;
+}
 
 .pokemon_container {
 	width: 100%;
-	padding: 140px 20px 16px 60px;
+	padding: 20px 20px 16px 60px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	row-gap: 50px;
@@ -63,6 +85,18 @@ body {
 	align-items: center;
 	gap: 8px;
 	height: 100%;
+}
+.content_card_order_text {
+	color: #8f9396;
+	font-size: 0.7rem;
+	font-weight: 800;
+}
+
+.content_card_name_text {
+	font-weight: bold;
+	color: #011030;
+	font-size: 1.2rem;
+	margin-bottom: 0.4rem;
 }
 
 .top_section {
@@ -106,6 +140,28 @@ body {
 }
 .pagination_container-buttons button:hover {
 	color: red;
+}
+
+.details_pokemon {
+	width: 40vw;
+	margin: 0 1vw 0 0.1rem;
+	background-color: #fff;
+	border-radius: 1rem;
+	height: 92vh;
+	position: sticky;
+	top: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.details_pokemon_img {
+	position: relative;
+	bottom: 6rem;
+}
+.details_pokemon_colortext {
+	color: #8f9396;
+	font-size: 1.2rem;
 }
 
 @media screen and (min-width: 768px) {

@@ -5,10 +5,10 @@ import MenuOptions from "./components/MenuOptions";
 const App = () => {
   return (
     <PokemonProvider >
-      <div className="flex relative">
+      <main className="flex relative">
         <DisplayPokemons />
         <MenuOptions />
-      </div >
+      </main >
     </PokemonProvider>
   );
 }
