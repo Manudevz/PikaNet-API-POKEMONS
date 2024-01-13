@@ -27,6 +27,8 @@ const DisplayPokemons = () => {
   };
 
 
+
+
   return (
     <section style={{ width: '100%' }}>
       <PokemonSearcher searchedPokemon={searchedPokemon} handleSearchedPokemon={handleSearchedPokemon} />
@@ -44,7 +46,7 @@ const DisplayPokemons = () => {
             <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
           </>
           :
-          <div style={{ width: '100%' }}>
+          <>
             <div className="pokemon_container">
               {
                 pokemonsSelected.map((pokemon) => (
@@ -52,7 +54,7 @@ const DisplayPokemons = () => {
                 ))
               }
             </div>
-          </div>
+          </>
       }
     </section>
   );

@@ -18,12 +18,15 @@ type Pokemons = {
 };
 
 interface PokemonContextProps {
+  loader: boolean;
+  setLoader: React.Dispatch<React.SetStateAction<boolean>>;
   pokemons: Pokemons[];
-  allPokemons: Pokemons[]
+  allPokemons: Pokemons[];
   setPokemons: React.Dispatch<React.SetStateAction<Pokemons[]>>;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
+
 
 const PokemonContext = createContext<PokemonContextProps | undefined>(undefined);
 

@@ -26,7 +26,8 @@ const typeColorMappings: Record<string, string> = {
 };
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
-  console.log("🚀 ~ PokemonCard ~ pokemon:", pokemon)
+
+
   return (
     <div className="pokemon_card_container" >
       <div className="content_card">

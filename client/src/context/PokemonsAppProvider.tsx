@@ -6,7 +6,7 @@ import { ApiResponse, PokemonProviderProps, Pokemons } from '../types/index';
 const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [pokemons, setPokemons] = useState<Pokemons[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  // const [allPokemons, setAllpokemons] = useState<Pokemons[]>([]);
+  const [loader, setLoader] = useState(true)
   const [allPokemons, setAllPokemons] = useState<Pokemons[]>([]);
 
   const [isDataFetched, setIsDataFetched] = useState(false);
@@ -39,6 +39,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
     // Cleanup function
     return () => {
       source.cancel('closed by the user.');
+
     };
   }, [currentPage]);
 
@@ -95,7 +96,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
 
 
   return (
-    <PokemonContext.Provider value={{ pokemons, setPokemons, currentPage, setCurrentPage, allPokemons }}>
+    <PokemonContext.Provider value={{ pokemons, setPokemons, currentPage, setCurrentPage, allPokemons, loader, setLoader }}>
       {children}
     </PokemonContext.Provider>
   );

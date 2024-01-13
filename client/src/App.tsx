@@ -1,14 +1,10 @@
 import PokemonProvider from "../src/context/PokemonsAppProvider";
-import DisplayPokemons from "../src/components/DisplayPokemons";
-import MenuOptions from "./components/MenuOptions";
+import { Home } from './pages/Home';
 
 const App = () => {
   return (
     <PokemonProvider >
-      <main className="flex relative">
-        <DisplayPokemons />
-        <MenuOptions />
-      </main >
+      <Home />
     </PokemonProvider>
   );
 }
