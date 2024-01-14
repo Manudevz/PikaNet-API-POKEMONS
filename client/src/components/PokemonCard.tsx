@@ -2,6 +2,7 @@ import { Pokemons } from "../types";
 
 type PokemonCardProps = {
   pokemon: Pokemons;
+  handlePokemonClick: (id: number | string | undefined) => void
 };
 
 const typeColorMappings: Record<string, string> = {
@@ -25,11 +26,11 @@ const typeColorMappings: Record<string, string> = {
   fairy: '#D685AD',
 };
 
-export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+export const PokemonCard = ({ pokemon, handlePokemonClick }: PokemonCardProps) => {
 
 
   return (
-    <div className="pokemon_card_container" >
+    <div className="pokemon_card_container" onClick={() => handlePokemonClick(pokemon.id)} >
       <div className="content_card">
         <div className="top_section"   >
           <img className="imgPokemon" style={{ height: '96px', width: '96px', marginTop: '-50px' }} src={pokemon.sprites.front_default || '../../public/images/pokemon_not_imgEncountered.png'} alt={pokemon.name} />
