@@ -5,12 +5,10 @@ import { Loader } from '../components/Loader';
 import { useEffect, useState } from 'react';
 import { Pokemons } from '../types';
 
-type HomeProps = {
-  pokemon: Pokemons;
-};
+
 
 export const Home = () => {
-  const [pokemon, setPokemon] = useState<HomeProps | undefined>(undefined);
+  const [pokemon, setPokemon] = useState<Pokemons | undefined>(undefined);
 
   const { allPokemons, loader, setLoader } = usePokemonContext();
 
@@ -20,12 +18,12 @@ export const Home = () => {
 
   const handlePokemonClick = (id?: number | string | undefined) => {
     const foundPokemon = allPokemons.find((p: Pokemons) => id === p.id);
-    setPokemon(foundPokemon as HomeProps | undefined);
+    setPokemon(foundPokemon as Pokemons | undefined);
   };
 
   const closePokemonDetail = () => {
-    setPokemon(undefined)
-  }
+    setPokemon(undefined);
+  };
 
   return (
     <>

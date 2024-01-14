@@ -2,7 +2,7 @@
 import { Pokemons } from "../types"
 
 type MenuOptionsProps = {
-  pokemon: Pokemons;
+  pokemon?: Pokemons | undefined;
   closePokemonDetail: () => void;
 }
 
@@ -23,7 +23,7 @@ const MenuOptions = ({ pokemon, closePokemonDetail }: MenuOptionsProps) => {
               </button>
               <img className="img_details" src={pokemon.imagePokemon} alt="" />
             </div>
-            <h2>{pokemon.name}</h2>
+            <h2 className="pokemon_name">{pokemon.name}</h2>
           </section>
       }
 
