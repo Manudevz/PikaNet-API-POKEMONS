@@ -2,11 +2,11 @@
 import { Pokemons } from "../types"
 
 type MenuOptionsProps = {
-  pokemon: Pokemons
+  pokemon: Pokemons;
+  closePokemonDetail: () => void;
 }
 
-const MenuOptions = ({ pokemon }: MenuOptionsProps) => {
-  console.log("🚀 ~ MenuOptions ~ pokemon:", pokemon)
+const MenuOptions = ({ pokemon, closePokemonDetail }: MenuOptionsProps) => {
   return (
     <>
       {
@@ -16,8 +16,14 @@ const MenuOptions = ({ pokemon }: MenuOptionsProps) => {
           <h2 className="relative bottom-20 details_pokemon_colortext">to display here.</h2>
         </section>
           :
-          <section className="details_pokemon">
-            <h1>{pokemon.name}</h1>
+          <section className="details_pokemon_selected">
+            <div className="circle">
+              <button className="exit_details" onClick={closePokemonDetail}>
+                x
+              </button>
+              <img className="img_details" src={pokemon.imagePokemon} alt="" />
+            </div>
+            <h2>{pokemon.name}</h2>
           </section>
       }
 

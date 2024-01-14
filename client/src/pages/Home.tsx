@@ -23,6 +23,9 @@ export const Home = () => {
     setPokemon(foundPokemon as HomeProps | undefined);
   };
 
+  const closePokemonDetail = () => {
+    setPokemon(undefined)
+  }
 
   return (
     <>
@@ -31,7 +34,7 @@ export const Home = () => {
       ) : (
         <main className="flex relative">
           <DisplayPokemons handlePokemonClick={handlePokemonClick} />
-          <MenuOptions pokemon={pokemon} />
+          <MenuOptions pokemon={pokemon} closePokemonDetail={closePokemonDetail} />
         </main>
       )}
     </>
