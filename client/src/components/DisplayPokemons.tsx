@@ -32,7 +32,7 @@ const DisplayPokemons = ({ handlePokemonClick }: DisplayPokemonsProps) => {
 
 
   return (
-    <section style={{ width: '100%' }}>
+    <section style={{ width: '100%' }} className="display_pokemons_list">
       <PokemonSearcher searchedPokemon={searchedPokemon} handleSearchedPokemon={handleSearchedPokemon} />
       {
         pokemons.length && !searchedPokemon
