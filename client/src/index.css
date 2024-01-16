@@ -166,7 +166,7 @@ body {
 	position: relative;
 	bottom: 6rem;
 }
-.details_pokemon_colortext {
+details_pokemon_selected .details_pokemon_colortext {
 	color: #8f9396;
 	font-size: 1.2rem;
 }
@@ -261,6 +261,7 @@ body {
 	}
 	.details_pokemon_selected {
 		width: 40vw;
+		min-width: 240px;
 		margin: 0 1vw 0 0.1rem;
 	}
 
