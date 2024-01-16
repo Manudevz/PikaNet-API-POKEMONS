@@ -29,12 +29,12 @@ const DisplayPokemons = ({ handlePokemonClick }: DisplayPokemonsProps) => {
     setPokemonsSelected(filterPokemons(searchText));
   };
 
-
+  console.log("Pokemons:", pokemons);
   return (
     <section style={{ width: '100%' }} className="display_pokemons_list">
       <PokemonSearcher searchedPokemon={searchedPokemon} handleSearchedPokemon={handleSearchedPokemon} />
       {
-        pokemons.length && !searchedPokemon
+        Array.isArray(pokemons) && pokemons.length && !searchedPokemon
           ?
           <>
             <div className="pokemon_container">
