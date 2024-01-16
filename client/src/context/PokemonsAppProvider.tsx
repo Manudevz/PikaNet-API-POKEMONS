@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios, { CancelTokenSource } from 'axios';
 import PokemonContext from "./PokemonsAppContext";
-import { ApiResponse, PokemonProviderProps, Pokemons } from '../types/index';
+import { ApiResponse, PokemonProviderProps, Pokemons } from '../context/PokemonsAppContext';
 
 const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [pokemons, setPokemons] = useState<Pokemons[]>([]);
