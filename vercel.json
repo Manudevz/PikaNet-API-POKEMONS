@@ -16,7 +16,5 @@
       "dest": "client/dist/$1"
     }
   ],
-  "public": {
-    "base": "/client/dist/public"
-  }
+  "public": true
 }
