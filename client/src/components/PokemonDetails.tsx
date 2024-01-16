@@ -130,29 +130,25 @@ export const PokemonDetails = ({ pokemon, closePokemonDetail, loading, setLoadin
             <div className="flex w-full justify-center flex-col mt-1 px-3">
               <h4 className="font-bold mt-1">Stats</h4>
               <div className="flex justify-evenly">
-                {
-                  pokemon?.stats.map((element: Stats) => {
-                    return (
-                      <div className="flex flex-col container-stat bg-blue-100">
-                        <h6 className={`circle-stat text-10  font-bold text-white rounded-full ${element.stat.name === 'hp' ? 'bg-red-500' :
-                          element.stat.name === 'attack' ? 'bg-orange-500 ' :
-                            element.stat.name === 'defense' ? 'bg-green-500' :
-                              element.stat.name === 'special-attack' ? 'bg-blue-400' :
-                                element.stat.name === 'special-defense' ? 'bg-yellow-500' :
-                                  element.stat.name === 'speed' ? 'bg-gray-500' : ''
-                          }`}>
-                          {element.stat.name === 'hp' ? 'HP' :
-                            element.stat.name === 'attack' ? 'ATK' :
-                              element.stat.name === 'defense' ? 'DEF' :
-                                element.stat.name === 'special-attack' ? 'SpA' :
-                                  element.stat.name === 'special-defense' ? 'SpD' :
-                                    element.stat.name === 'speed' ? 'SPD' : ''}
-                        </h6>
-                        <p className="text-12 font-bold">{element.base_stat}</p>
-                      </div>
-                    )
-                  })
-                }
+                {pokemon?.stats.map((element: Stats, index: number) => (
+                  <div key={index} className="flex flex-col container-stat bg-blue-100">
+                    <h6 className={`circle-stat text-10 font-bold text-white rounded-full ${element.stat.name === 'hp' ? 'bg-red-500' :
+                      element.stat.name === 'attack' ? 'bg-orange-500 ' :
+                        element.stat.name === 'defense' ? 'bg-green-500' :
+                          element.stat.name === 'special-attack' ? 'bg-blue-400' :
+                            element.stat.name === 'special-defense' ? 'bg-yellow-500' :
+                              element.stat.name === 'speed' ? 'bg-gray-500' : ''
+                      }`}>
+                      {element.stat.name === 'hp' ? 'HP' :
+                        element.stat.name === 'attack' ? 'ATK' :
+                          element.stat.name === 'defense' ? 'DEF' :
+                            element.stat.name === 'special-attack' ? 'SpA' :
+                              element.stat.name === 'special-defense' ? 'SpD' :
+                                element.stat.name === 'speed' ? 'SPD' : ''}
+                    </h6>
+                    <p className="text-12 font-bold">{element.base_stat}</p>
+                  </div>
+                ))}
               </div>
             </div>
 

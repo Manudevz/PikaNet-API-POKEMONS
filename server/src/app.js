@@ -11,6 +11,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors(optionsCors));
 
-app.use("/", homeRouter);
+// Serve static files first
 app.use(express.static(path.join(__dirname, "public")));
+
+// Then, handle routes
+app.use("/", homeRouter);
+
 module.exports = app;
