@@ -49,7 +49,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
     const getPokemons = async () => {
       try {
         const response = await axios.get<ApiResponse>(
-          `https://pokeapi.co/api/v2/pokemon?offset=0&limit=1198`,
+          `https://pokeapi.co/api/v2/pokemon?offset=0&limit=2000`,
           {
             cancelToken: source.token
           }

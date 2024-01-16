@@ -1,9 +1,31 @@
 /* eslint-disable react-refresh/only-export-components */
 // context/PokemonContext.tsx
 
-import { createContext, useContext } from "react";
+import { ReactNode, createContext, useContext } from "react";
 
-type Pokemons = {
+export type PokemonProviderProps = {
+  children: ReactNode;
+}
+
+
+export type ApiResponse = {
+  results: {
+    name: string;
+    url: string;
+  }[];
+};
+
+export type Ability = {
+  ability: {
+    name: string
+    url: string
+  }
+  is_hidden: boolean
+  slot: number
+}
+
+
+export type Pokemons = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   types: any;
   sprites: {
@@ -15,7 +37,17 @@ type Pokemons = {
   id?: number | string;
   name: string;
   imagePokemon: string;
+  species?: {
+    url: string;
+  } | undefined
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  speciesData?: string;
+  weight: string;
+  height: string;
+  abilities: Ability[]
+
 };
+
 
 interface PokemonContextProps {
   loader: boolean;

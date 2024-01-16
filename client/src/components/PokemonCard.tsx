@@ -1,4 +1,5 @@
 import { Pokemons } from "../types";
+import { capitalizeFirstLetter } from "../utils";
 
 type PokemonCardProps = {
   pokemon: Pokemons;
@@ -33,10 +34,10 @@ export const PokemonCard = ({ pokemon, handlePokemonClick }: PokemonCardProps) =
     <div className="pokemon_card_container" onClick={() => handlePokemonClick(pokemon.id)} >
       <div className="content_card">
         <div className="top_section"   >
-          <img className="imgPokemon" style={{ height: '96px', width: '96px', marginTop: '-50px' }} src={pokemon.sprites.front_default || '../../public/images/pokemon_not_imgEncountered.png'} alt={pokemon.name} />
+          <img className="imgPokemon" style={{ height: '96px', width: '96px', marginTop: '-50px' }} src={pokemon.sprites.front_default || pokemon?.imagePokemon || '../../public/images/pokemon_not_imgEncountered-removebg-preview.png'} alt={pokemon.name} />
         </div>
         <p className="content_card_order_text">N° {pokemon.id}</p>
-        <h3 className="content_card_name_text">{pokemon.name}</h3>
+        <h3 className="content_card_name_text">{capitalizeFirstLetter(pokemon.name)}</h3>
         <div>
           {pokemon?.typesPokemon?.map((type: string) => (
             <span

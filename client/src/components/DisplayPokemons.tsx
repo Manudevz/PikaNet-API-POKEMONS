@@ -26,7 +26,6 @@ const DisplayPokemons = ({ handlePokemonClick }: DisplayPokemonsProps) => {
     const searchText = e.target.value;
     setSearchedPokemon(searchText);
 
-    // Call the filterPokemons function with the new search text
     setPokemonsSelected(filterPokemons(searchText));
   };
 
