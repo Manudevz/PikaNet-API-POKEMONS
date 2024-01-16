@@ -2,7 +2,6 @@ const axios = require("axios");
 
 const getPokemonsFromApi = async (offSet) => {
 	const urlPath = `https://pokeapi.co/api/v2/pokemon?offset=${offSet}&limit=21`;
-	console.log("🚀 ~ getPokemonsFromApi ~ offSet:", offSet);
 	try {
 		const pokemonsPromises = await axios.get(urlPath);
 		if (pokemonsPromises.status === 200) {

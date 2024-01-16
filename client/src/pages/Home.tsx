@@ -76,7 +76,6 @@ export const Home = () => {
   const closePokemonDetail = () => {
     setPokemon(undefined);
   };
-  console.log(pokemon)
   return (
     <>
       {loader ? (
