@@ -19,7 +19,7 @@ const MenuOptions = ({ pokemon, closePokemonDetail, loading, setLoading }: MenuO
         !pokemon
           ?
           <section className="details_pokemon hidden md:flex" >
-            <img className="details_pokemon_img" width={100} height={100} src="../../public/images/no-pokemon-selected.png" alt="" />
+            <img className="details_pokemon_img" width={100} height={100} src="../../images/no-pokemon-selected.png" alt="" />
             <h2 className="relative bottom-20 details_pokemon_colortext">Select a pokemon</h2>
             <h2 className="relative bottom-20 details_pokemon_colortext">to display here.</h2>
           </section>

@@ -29,7 +29,6 @@ const DisplayPokemons = ({ handlePokemonClick }: DisplayPokemonsProps) => {
     setPokemonsSelected(filterPokemons(searchText));
   };
 
-  console.log("Pokemons:", pokemons);
   return (
     <section style={{ width: '100%' }} className="display_pokemons_list">
       <PokemonSearcher searchedPokemon={searchedPokemon} handleSearchedPokemon={handleSearchedPokemon} />
