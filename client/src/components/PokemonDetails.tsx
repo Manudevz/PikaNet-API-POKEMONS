@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { Ability, Pokemons } from "../context/PokemonsAppContext";
+import { Ability, Pokemons, Stats } from "../context/PokemonsAppContext";
 import { capitalizeFirstLetter } from "../utils";
 import { DNA } from "react-loader-spinner";
 
@@ -85,7 +85,7 @@ export const PokemonDetails = ({ pokemon, closePokemonDetail, loading, setLoadin
             </div>
             <p className="content_card_order_text mt-1">N° {pokemon?.id}</p>
             <h2 className="pokemon_name mt-0 font-bold">{capitalizeFirstLetter(pokemon?.name ?? '')}</h2>
-            <div className="mt-4">
+            <div className="mt-3">
               {pokemon?.typesPokemon?.map((type: string) => (
                 <span
                   key={type}
@@ -98,8 +98,8 @@ export const PokemonDetails = ({ pokemon, closePokemonDetail, loading, setLoadin
                 </span>
               ))}
             </div>
-            <h4 className="font-bold mt-4">Pokedex Entry</h4>
-            <p className=" entry-text mt-2 leading-5">{pokemon?.speciesData}</p>
+            <h4 className="font-bold mt-3">Pokedex Entry</h4>
+            <p className=" entry-text mt-2 leading-4  md:leading-5">{pokemon?.speciesData}</p>
             <div className="flex mt-3 gap-3 w-full justify-center px-3">
               <div className="w-3/4 ">
                 <h4 className="font-bold">Height</h4>
@@ -118,7 +118,7 @@ export const PokemonDetails = ({ pokemon, closePokemonDetail, loading, setLoadin
                 {
                   pokemon?.abilities.slice(0, 2).map((element: Ability, index: number) => (
                     <div key={index} className="w-3/4">
-                      <p key={`${index}${element.ability.name}`} className="w-full bg-blue-100 py-1 rounded-lg h-7  flex items-center justify-center">
+                      <p key={`${index}${element.ability.name}`} className="w-full bg-blue-100 mt-2 rounded-lg h-7  flex items-center justify-center">
                         {element.ability.name}
                       </p>
                     </div>
@@ -127,6 +127,35 @@ export const PokemonDetails = ({ pokemon, closePokemonDetail, loading, setLoadin
                 }
               </div>
             </div>
+            <div className="flex w-full justify-center flex-col mt-1 px-3">
+              <h4 className="font-bold mt-1">Stats</h4>
+              <div className="flex justify-evenly">
+                {
+                  pokemon?.stats.map((element: Stats) => {
+                    return (
+                      <div className="flex flex-col container-stat bg-blue-100">
+                        <h6 className={`circle-stat text-10  font-bold text-white rounded-full ${element.stat.name === 'hp' ? 'bg-red-500' :
+                          element.stat.name === 'attack' ? 'bg-orange-500 ' :
+                            element.stat.name === 'defense' ? 'bg-green-500' :
+                              element.stat.name === 'special-attack' ? 'bg-blue-400' :
+                                element.stat.name === 'special-defense' ? 'bg-yellow-500' :
+                                  element.stat.name === 'speed' ? 'bg-gray-500' : ''
+                          }`}>
+                          {element.stat.name === 'hp' ? 'HP' :
+                            element.stat.name === 'attack' ? 'ATK' :
+                              element.stat.name === 'defense' ? 'DEF' :
+                                element.stat.name === 'special-attack' ? 'SpA' :
+                                  element.stat.name === 'special-defense' ? 'SpD' :
+                                    element.stat.name === 'speed' ? 'SPD' : ''}
+                        </h6>
+                        <p className="text-12 font-bold">{element.base_stat}</p>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
+
           </section>
           :
           <section className="details_pokemon_selected flex flex-col justify-center items-center">

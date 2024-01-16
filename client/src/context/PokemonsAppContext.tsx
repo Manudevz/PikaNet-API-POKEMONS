@@ -24,6 +24,13 @@ export type Ability = {
   slot: number
 }
 
+export type Stats = {
+  base_stat: string;
+  stat: {
+    name: string;
+    url: string
+  }
+}
 
 export type Pokemons = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,7 +51,8 @@ export type Pokemons = {
   speciesData?: string;
   weight: string;
   height: string;
-  abilities: Ability[]
+  abilities: Ability[];
+  stats: Stats[]
 
 };
 

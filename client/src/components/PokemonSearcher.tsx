@@ -17,7 +17,7 @@ export const PokemonSearcher = ({ searchedPokemon, handleSearchedPokemon }: Poke
       />
       <img
         className="search-icon"
-        src="../../public/images/pokeball.png"
+        src="../../public/images/Lupa_EP-.png"
         alt="Search Icon"
       />
     </div>

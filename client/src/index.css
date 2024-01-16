@@ -43,12 +43,26 @@ body {
 }
 
 .search-icon {
-	right: 0.6rem;
+	right: 1rem;
 	position: relative;
 	object-fit: cover;
 	height: 34px;
 	width: 34px;
 	top: 2.5rem;
+}
+
+.container-stat {
+	display: flex;
+	padding: 5px;
+	border-radius: 30px;
+	margin: 5px;
+}
+.circle-stat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
 }
 
 .pokemon_container {
@@ -177,7 +191,7 @@ details_pokemon_selected .details_pokemon_colortext {
 
 .entry-text {
 	color: #8f9396;
-	padding: 0px 1rem;
+	padding: 0px 0.8rem;
 	margin-top: 0.2rem;
 }
 
@@ -261,7 +275,7 @@ details_pokemon_selected .details_pokemon_colortext {
 	}
 	.details_pokemon_selected {
 		width: 40vw;
-		min-width: 240px;
+		min-width: 280px;
 		margin: 0 1vw 0 0.1rem;
 	}
 
@@ -269,5 +283,8 @@ details_pokemon_selected .details_pokemon_colortext {
 		width: 100%;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		padding: 20px 20px 16px 60px;
+	}
+	.searcher {
+		width: 64%;
 	}
 }
