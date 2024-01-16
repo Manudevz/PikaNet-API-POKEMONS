@@ -3,7 +3,7 @@ import { usePokemonContext } from "../context/PokemonsAppContext";
 import Pagination from "./Pagination";
 import { PokemonCard } from "./PokemonCard";
 import { PokemonSearcher } from "./PokemonSearcher";
-import { Pokemons } from "../types";
+import { Pokemons } from "../context/PokemonsAppContext";
 
 type DisplayPokemonsProps = {
   handlePokemonClick: (id: number | string | undefined) => void

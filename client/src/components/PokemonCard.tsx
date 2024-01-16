@@ -1,4 +1,4 @@
-import { Pokemons } from "../types";
+import { Pokemons } from "../context/PokemonsAppContext";
 import { capitalizeFirstLetter } from "../utils";
 
 type PokemonCardProps = {
