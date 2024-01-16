@@ -8,10 +8,12 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [loader, setLoader] = useState(true)
   const [allPokemons, setAllPokemons] = useState<Pokemons[]>([]);
+  const [changePage, setChangePage] = useState(false);
 
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
+    setChangePage(true);
     const source: CancelTokenSource = axios.CancelToken.source();
 
     const getPokemons = async (offset: number) => {
@@ -24,13 +26,15 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
         );
         const pokemonsFromServer: Pokemons[] = response.data;
         setPokemons(pokemonsFromServer);
+        setIsDataFetched(true);
       } catch (error) {
         if (axios.isCancel(error)) {
-          // Request was canceled, handle as needed
           console.log('Request canceled:', error.message);
         } else {
           console.error('Error fetching Pokemon data:', error);
         }
+      } finally {
+        setChangePage(false);
       }
     };
 
@@ -39,7 +43,6 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
     // Cleanup function
     return () => {
       source.cancel('closed by the user.');
-
     };
   }, [currentPage]);
 
@@ -96,7 +99,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
 
 
   return (
-    <PokemonContext.Provider value={{ pokemons, setPokemons, currentPage, setCurrentPage, allPokemons, loader, setLoader }}>
+    <PokemonContext.Provider value={{ pokemons, setPokemons, currentPage, setCurrentPage, allPokemons, loader, setLoader, changePage }}>
       {children}
     </PokemonContext.Provider>
   );

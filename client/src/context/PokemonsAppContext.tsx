@@ -53,11 +53,11 @@ export type Pokemons = {
   height: string;
   abilities: Ability[];
   stats: Stats[]
-
 };
 
 
 interface PokemonContextProps {
+  changePage: boolean;
   loader: boolean;
   setLoader: React.Dispatch<React.SetStateAction<boolean>>;
   pokemons: Pokemons[];

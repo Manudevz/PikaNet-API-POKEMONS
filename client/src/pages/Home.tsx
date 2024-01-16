@@ -82,6 +82,14 @@ export const Home = () => {
         <Loader />
       ) : (
         <main className="md:flex relative">
+          <div className='flex absolute top-1 left-1 justify-center items-center'>
+            <a href="https://github.com/Manudevz" target="_blank" rel="noopener noreferrer">
+              <img width={40} height={40} src="../../images/github.png" alt="github-logo" />
+            </a>
+            <a href="https://github.com/Manudevz" target="_blank" rel="noopener noreferrer" className="text-red-500 pl-2">
+              Manudevz
+            </a>
+          </div>
           <div style={{ width: '100%' }} className={`${isMobileView ? (pokemon ? 'none' : 'block') : 'block'}`}>
             <DisplayPokemons handlePokemonClick={handlePokemonClick} />
           </div>

@@ -1,6 +1,7 @@
 # PikaNet TS Project
+Explore the Pokémon world with PikaNet TS Project! Check it out [here](https://pokedex-app-eep3.onrender.com/).
 
-<a href='https://postimg.cc/XrVtFRXh' target='_blank'><img src='https://i.postimg.cc/L8fRdRSH/Screenshot-94.png' border='0' alt='Screenshot-94'/></a>
+![PikaNet TS Project](https://i.postimg.cc/L8fRdRSH/Screenshot-94.png)
 
 ## Description
 PikaNet TS Project is a TypeScript-based web application that allows users to explore a vast collection of Pokémon. With a user-friendly interface, you can easily search and discover details about your favorite Pokémon. The application fetches information from the [PokéAPI](https://pokeapi.co/) to provide comprehensive data on each Pokémon, including their abilities, types, and more.
