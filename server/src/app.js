@@ -3,7 +3,11 @@ const morgan = require("morgan");
 const homeRouter = require("./routes/home");
 const cors = require("cors");
 const optionsCors = {
-	origin: ["http://localhost:5173", "https://pokedex-app-eep3.onrender.com"],
+	origin: [
+		"http://localhost:5174",
+		"https://pokedex-app-eep3.onrender.com",
+		"http://localhost:5173",
+	],
 };
 const path = require("path");
 
