@@ -7,6 +7,7 @@ const optionsCors = {
 		"http://localhost:5174",
 		"https://pokedex-app-eep3.onrender.com",
 		"http://localhost:5173",
+		"http://localhost:5175",
 	],
 };
 const path = require("path");

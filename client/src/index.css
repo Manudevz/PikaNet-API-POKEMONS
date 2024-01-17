@@ -286,4 +286,7 @@ details_pokemon_selected .details_pokemon_colortext {
 	.searcher {
 		width: 64%;
 	}
+	.details_pokemon {
+		min-width: 280px;
+	}
 }
